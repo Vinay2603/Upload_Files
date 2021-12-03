@@ -10,7 +10,7 @@ const storage = multer.diskStorage({
         callback(null,uniquePrefix+"-"+file.originalname)
     },
 })
-const fileFilter = (req, file, callback)=>{
+const fileFilter =function (req, file, callback){
     if(file.minetype === "image/jpeg" || file.minetype === " image/png"){
         callback(null, true)
 
